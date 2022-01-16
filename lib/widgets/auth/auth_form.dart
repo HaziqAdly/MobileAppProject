@@ -52,15 +52,6 @@ class _AuthFormState extends State<AuthForm> {
                 children: <Widget>[
                   Container(
                     padding: const EdgeInsets.fromLTRB(15.0, 50.0, 0.0, 0.0),
-                    child: const Text('DAD',
-                        style: TextStyle(
-                            color: Color.fromRGBO(253, 111, 150, 1),
-                            fontSize: 80.0,
-                            fontFamily: "Raleway",
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(15.0, 125.0, 0.0, 0.0),
                     child: DefaultTextStyle(
                       style: const TextStyle(
                         fontFamily: "Raleway",
@@ -70,12 +61,21 @@ class _AuthFormState extends State<AuthForm> {
                       ),
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          WavyAnimatedText("FUNNY"),
-                          WavyAnimatedText('JOKES'),
+                          WavyAnimatedText("Chuck"),
+                          WavyAnimatedText('Norris'),
                         ],
-                        isRepeatingAnimation: false,
+                        isRepeatingAnimation: true,
                       ),
                     ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(15.0, 125.0, 0.0, 0.0),
+                    child: const Text('Jokes',
+                        style: TextStyle(
+                            color: Color.fromRGBO(253, 111, 150, 1),
+                            fontSize: 80.0,
+                            fontFamily: "Raleway",
+                            fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

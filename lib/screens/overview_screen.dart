@@ -29,8 +29,9 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
               child: AnimatedTextKit(
                 animatedTexts: [
-                  WavyAnimatedText("DAD"),
-                  WavyAnimatedText('JOKES'),
+                  WavyAnimatedText("Chuck"),
+                  WavyAnimatedText('Norris'),
+                  WavyAnimatedText('Jokes'),
                 ],
                 isRepeatingAnimation: true,
               ),
