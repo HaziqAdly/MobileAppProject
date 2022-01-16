@@ -24,9 +24,11 @@ Example of Chuck Norris Joke,
 ## Running the project
 
 After pulling the repo run the following command in the directory
+
 `flutter pub get`
 
 Then run the command to execute the app
+
 `flutter run`
 
 **Have Fun!**
