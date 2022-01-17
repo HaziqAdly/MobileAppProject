@@ -6,6 +6,7 @@ import 'screens/overview_screen.dart';
 import 'screens/splash_screen.dart';
 import '/screens/auth_screen.dart';
 import '/screens/overview_screen.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,9 @@ void main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,
