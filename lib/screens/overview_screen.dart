@@ -6,7 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<GetJokes> fetchPrayerTime() async {
+Future<GetJokes> fetchJokes() async {
   final response =
       await http.get(Uri.parse('https://api.chucknorris.io/jokes/random'));
 
@@ -44,12 +44,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
   @override
   void initState() {
     super.initState();
-    futureJokes = fetchPrayerTime();
+    futureJokes = fetchJokes();
   }
 
   void _getNewJokes() {
     setState(() {
-      futureJokes = fetchPrayerTime();
+      futureJokes = fetchJokes();
     });
   }
 
