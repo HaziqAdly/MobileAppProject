@@ -6,7 +6,7 @@ This project purposely for CSCI 4311: Mobile Application Development. Developed 
 
 - Fadhluddin bin Sahlan (1817445)
 - Faeez Zimam bin Feizal (1819541)
-- Muhammad Haziq Adli bin Zamzuri ()
+- Muhammad Haziq Adli bin Zamzuri (1814981)
 
 ## Features
 
