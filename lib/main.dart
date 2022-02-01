@@ -33,32 +33,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Chuck Norris Jokes',
-        theme: ThemeData(
-            primarySwatch: Colors.pink,
-            backgroundColor: Colors.white,
-            // ignore: deprecated_member_use
-            accentColor: Colors.deepPurple,
-            // ignore: deprecated_member_use
-            accentColorBrightness: Brightness.dark,
-            buttonTheme: ButtonTheme.of(context).copyWith(
-                buttonColor: Colors.pink,
-                textTheme: ButtonTextTheme.primary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ))),
-        home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (ctx, userSnapshot) {
-            if (userSnapshot.connectionState == ConnectionState.waiting) {
-              return const SplashScreen();
-            }
-            if (userSnapshot.hasData) {
-              return const OverviewScreen();
-            }
-            return const AuthScreen();
-          },
-        ));
+      debugShowCheckedModeBanner: false,
+      title: 'Chuck Norris Jokes',
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+        backgroundColor: Colors.white,
+        // ignore: deprecated_member_use
+        accentColor: Colors.deepPurple,
+        // ignore: deprecated_member_use
+        accentColorBrightness: Brightness.dark,
+        buttonTheme: ButtonTheme.of(context).copyWith(
+          buttonColor: Colors.pink,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          )
+        )
+      ),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (ctx, userSnapshot) {
+          if (userSnapshot.connectionState == ConnectionState.waiting) {
+            return const SplashScreen();
+          }
+          if (userSnapshot.hasData) {
+            return const OverviewScreen();
+          }
+          return const AuthScreen();
+        },
+      )
+    );
   }
 }
