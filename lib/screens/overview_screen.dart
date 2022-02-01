@@ -61,51 +61,55 @@ class _OverviewScreenState extends State<OverviewScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(
-                  left: 30, right: 30, top: 15, bottom: 15),
-              child: DefaultTextStyle(
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color.fromRGBO(253, 111, 150, 1),
-                  fontSize: 38,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Raleway",
-                ),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    WavyAnimatedText("Chuck"),
-                    WavyAnimatedText('Norris'),
-                    WavyAnimatedText('Jokes'),
-                  ],
-                  isRepeatingAnimation: true,
-                ),
-              )),
+            padding: const EdgeInsets.only(
+              left: 30, right: 30, top: 15, bottom: 15
+            ),
+            child: DefaultTextStyle(
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Color.fromRGBO(253, 111, 150, 1),
+                fontSize: 38,
+                fontWeight: FontWeight.bold,
+                fontFamily: "Raleway",
+              ),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText("Chuck"),
+                  WavyAnimatedText('Norris'),
+                  WavyAnimatedText('Jokes'),
+                ],
+                isRepeatingAnimation: true,
+              ),
+            )
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
                 FutureBuilder<GetJokes>(
-                    future: futureJokes,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Column(
-                          children: [
-                            Text(
-                              snapshot.data.jokes,
-                              style: const TextStyle(
-                                fontStyle: FontStyle.italic,
-                                fontSize: 18,
-                                fontFamily: "Raleway",
-                                fontWeight: FontWeight.bold,
-                              ),
+                  future: futureJokes,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Column(
+                        children: [
+                          Text(
+                            snapshot.data.jokes,
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontSize: 18,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.bold,
                             ),
-                          ],
-                        );
-                      } else if (snapshot.hasError) {
-                        return CircularProgressIndicator();
-                      }
+                          ),
+                        ],
+                      );
+                    } 
+                    else if (snapshot.hasError) {
                       return CircularProgressIndicator();
-                    })
+                    }
+                    return CircularProgressIndicator();
+                  }
+                )
               ],
             ),
           ),
@@ -121,13 +125,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   onPressed: _getNewJokes,
                   child: const Center(
                     child: DefaultTextStyle(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Raleway',
-                        ),
-                        child: Text('Load New Jokes')),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Raleway',
+                      ),
+                      child: Text('Load New Jokes')
+                    ),
                   ),
                 ),
               ),
@@ -146,13 +151,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   },
                   child: const Center(
                     child: DefaultTextStyle(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Raleway',
-                        ),
-                        child: Text('Log Out')),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Raleway',
+                      ),
+                      child: Text('Log Out')
+                    ),
                   ),
                 ),
               ),
